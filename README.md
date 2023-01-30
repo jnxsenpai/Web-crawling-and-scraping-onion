@@ -7,4 +7,4 @@ Instructions inside
 
  JS: -a-u99uMFUqk6G2SUygtPg&tor_network=true
  
- Normal: dikGSPKTyqOWwGgd9rSvzQ
+ Normal: dikGSPKTyqOWwGgd9rSvzQ&tor_network=true
