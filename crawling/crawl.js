@@ -4,7 +4,7 @@
  // Пример: api.get('https://www.sdfsdf.com', { pageWait: 5000 }).then(response => {
     
  const { CrawlingAPI, ScraperAPI } = require('./modules/proxycrawl');
-  const api = new CrawlingAPI({ token: 'dikGSPKTyqOWwGgd9rSvzQ&tor_network=true' });
+ const api = new CrawlingAPI({ token: 'dikGSPKTyqOWwGgd9rSvzQ&tor_network=true' });
 
     api.get('http://s4k4ceiapwwgcm3mkb6e4diqecpo7kvdnfr5gg7sph7jjppqkvwwqtyd.onion/').then(response => {
         if (response.statusCode === 200) {
