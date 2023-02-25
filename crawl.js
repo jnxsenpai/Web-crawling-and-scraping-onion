@@ -13,7 +13,7 @@
 
  const posting = async () => {
     
-    // СКРЭПИНГ
+    // КРАВЛИНГ
      await api.get('http://s4k4ceiapwwgcm3mkb6e4diqecpo7kvdnfr5gg7sph7jjppqkvwwqtyd.onion/').then( response => {
         if (response.statusCode === 200) {
         

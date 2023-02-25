@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button to Run Node.js Code</title>
+</head>
+<body>
+  <button onclick="runNodeCode()">Run Node.js Code</button>
+  <script>
+    function runNodeCode() {
+      fetch('/runNodeCode')
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log(error));
+    }
+  </script>
+
+<form>
+    <input type="text" id="input-field">
+    <button type="button" onclick="sendData()">Send</button>
+  </form>
+
+  <script>
+    function sendData() {
+      const inputField = document.getElementById('input-field');
+      const inputData = inputField.value;
+      fetch(`/data?input=${inputData}`);
+    }
+  </script>
+</body>
+</html>
