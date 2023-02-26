@@ -1,9 +1,12 @@
 
+// Импортируем модули
+const scrap = require('./scrap');
 const express = require('express');
 const app = express();
 
-// Импортируем модуль
-const scrap = require('./scrap');
+delete require.cache[require.resolve('./scrap.js')];
+delete require.cache[require.resolve('./server.js')];
+
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
@@ -20,13 +23,13 @@ app.get('/runNodeCode', function (req, res) {
 app.get('/data', function (req, res) {
     const inputData = req.query.input;
     scrap.processData(inputData);
-    res.send(`Data received: ${inputData}`);
+    res.send(`Link: ${inputData}`);
   });
 
 
 
 app.use(express.static('public'));
 
-app.listen(4000, function () {
-  console.log('Server listening on port 4000!');
+app.listen(5000, function () {
+  console.log('Сервер работает на порту 5000!');
 });

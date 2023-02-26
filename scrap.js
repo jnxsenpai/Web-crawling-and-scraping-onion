@@ -8,22 +8,26 @@ var axios = require('axios');
 let resp = '';
 let input = '';
 
+
+// Принимает данные input со страницы
 module.exports.processData = function(inputData) {
     console.log(`Data received: ${inputData}`);
     input = inputData;
    
   };
  
-
-
-module.exports.run = function() {
+// Основная логика
+module.exports.run = function () {
     const posting = async () => {
         // СКРЭПИНГ
          await api.get(input).then( response => {
-            if (response.statusCode === 200) {
             
-            resp =  response.json;
-            console.log ('ok');
+            console.log(`ссылка на отправку ${input}`)
+
+            if (response.statusCode === 200) {
+
+                resp =  response.json;
+                console.log ('Ответ получен');
         }
         }).catch((error) => console.error);
          
@@ -36,7 +40,7 @@ module.exports.run = function() {
           })
           .then(function (response) {
             
-            console.log('ok');
+            console.log('Добавлено в БД');
           })
           .catch(function (error) {
             console.log(error);
@@ -45,5 +49,5 @@ module.exports.run = function() {
     }
     
     
-    posting();// ваш код здесь
+    posting();
   };
